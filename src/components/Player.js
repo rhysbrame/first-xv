@@ -17,7 +17,7 @@ export default function Player({ name, picture, positions }) {
           </li>
         </ul>
       </div>
-      <div className="select-container">
+      <form className="form-container">
         <select className="performance-selector-item">
           <option value="awful">Awful</option>
           <option value="poor">Poor</option>
@@ -25,7 +25,9 @@ export default function Player({ name, picture, positions }) {
           <option value="good">Good</option>
           <option value="great">Great</option>
         </select>
-      </div>
+        <br></br>
+        <input className="performance-submit-item" type="submit"/>
+      </form>
     </Fragment>
   );
 }

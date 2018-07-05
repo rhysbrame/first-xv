@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App--nav-bar {
+  color: whitesmoke;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -33,16 +37,11 @@
 
 .player-container {
   display: flex;
-  /* flex-direction: row;
-  flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
-
-  background-color: rgb(132, 0, 255);
 }
 
 .player-picture-item {
-  background-color: rgb(233, 32, 233);
   height: 400px;
   width: 400px;
   overflow: hidden;
@@ -54,20 +53,28 @@
 }
 
 .player-stats-item {
-  background-color: rgb(25, 247, 25);
   height: 400px;
   width: 400px;
 }
 
-.select-container {
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: crimson
+  height: 200px;
+  background-color: aqua;
 }
 
 .performance-selector-item {
-  background-color: rgb(32, 226, 233);
-  height: 200px;
-  width: 400px;
+  height: 20px;
+  width: 100px;
+}
+
+.performance-submit-item {
+  height: 20px;
+  width: 100px;
+}
+
+.nav-link {
+  color: aliceblue;
 }
