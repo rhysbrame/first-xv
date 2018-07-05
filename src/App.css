@@ -23,6 +23,51 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player-container {
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(132, 0, 255);
+}
+
+.player-picture-item {
+  background-color: rgb(233, 32, 233);
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+}
+
+.player-picture-item img {
+  height: 350px;
+  width: auto;
+}
+
+.player-stats-item {
+  background-color: rgb(25, 247, 25);
+  height: 400px;
+  width: 400px;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson
+}
+
+.performance-selector-item {
+  background-color: rgb(32, 226, 233);
+  height: 200px;
+  width: 400px;
 }

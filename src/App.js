@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Player from "./components/Player";
+import picture from "./dai.jpg";
 
 class App extends Component {
   render() {
@@ -13,6 +15,14 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>
+          <Player
+            picture={picture}
+            name="Dai Morris"
+            age="34"
+            positions={["fullback", "center"]}
+          />
+        </div>
       </div>
     );
   }
