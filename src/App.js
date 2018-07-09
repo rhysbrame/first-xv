@@ -1,35 +1,11 @@
-import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  NavLink,
-  Switch
-} from "react-router-dom";
-
+import React from "react";
+import { Route, NavLink, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 import Player from "./components/Player";
 import First from "./components/First";
-
 import "./App.css";
 import logo from "./logo.svg";
-import picture from "./dai.jpg";
-
-const NavBar = () => (
-  <div>
-    <NavLink className="nav-link" to="/">
-      Home
-    </NavLink>
-    <span>---</span>
-    <NavLink className="nav-link" to="/player">
-      Player
-    </NavLink>
-    <span>---</span>
-    <NavLink className="nav-link" to="/first">
-      First Link
-    </NavLink>
-  </div>
-);
 
 const App = () => (
   <div className="App">
@@ -48,15 +24,6 @@ const App = () => (
         <Route path="/player" component={Player} />
         <Route path="/first" component={First} />
       </Switch>
-      <div>
-        {/* <Player
-        picture={picture}
-        name="Dai Morris"
-        age="34"
-        positions={["fullback", "center"]}
-      /> */}
-        {/* <First /> */}
-      </div>
     </main>
   </div>
 );

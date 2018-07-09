@@ -1,0 +1,18 @@
+{
+  "playerData": [
+    {
+      "id": 1,
+      "picture": "link.com",
+      "name": "Rhys Brame",
+      "age": "34",
+      "positions": ["Fullback", "Center"]
+    },
+    {
+      "id": 2,
+      "picture": "./dai.jpg",
+      "name": "Dai Morris",
+      "age": "74",
+      "positions": ["No. 8"]
+    }
+  ]
+}

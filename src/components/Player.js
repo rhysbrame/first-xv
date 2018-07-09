@@ -1,7 +1,11 @@
 import React from "react";
 import { Fragment } from "react";
 
-export default function Player({ name, picture, positions }) {
+export default function Player({
+  name,
+  picture
+  // positions: [fullback, center]
+}) {
   return (
     <Fragment>
       <div className="player-container">
@@ -10,11 +14,11 @@ export default function Player({ name, picture, positions }) {
         </div>
         <ul className="player-stats-item">
           <li>{name}</li>
-          <li>
+          {/* <li>
             {positions.map(position => {
               return <li>{position}</li>;
             })}
-          </li>
+          </li> */}
         </ul>
       </div>
       <form className="form-container">
@@ -25,9 +29,16 @@ export default function Player({ name, picture, positions }) {
           <option value="good">Good</option>
           <option value="great">Great</option>
         </select>
-        <br></br>
-        <input className="performance-submit-item" type="submit"/>
+        <br />
+        <input className="performance-submit-item" type="submit" />
       </form>
     </Fragment>
   );
 }
+
+// <Player
+//   picture={picture}
+//   name="Dai Morris"
+//   age="34"
+//   positions={["fullback", "center"]}
+// />;
