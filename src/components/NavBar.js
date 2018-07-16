@@ -2,19 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
-  return (
-    <div>
+  return <div>
       <NavLink className="nav-link" to="/">
-        Home
+        Home-----
       </NavLink>
-      <span>---</span>
       <NavLink className="nav-link" to="/player">
-        Player
+        Player-----
       </NavLink>
-      <span>---</span>
-      <NavLink className="nav-link" to="/first">
-        First Link
+      <NavLink className="nav-link" to="/firstteam">
+        First Team-----
       </NavLink>
-    </div>
-  );
+      <NavLink className="nav-link" to="/roster">
+        Roster-----
+      </NavLink>
+    </div>;
 }

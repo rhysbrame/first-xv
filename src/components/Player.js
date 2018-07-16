@@ -1,24 +1,26 @@
-import React from "react";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
+import api from "../PlayerAPI";
 
-export default function Player({
-  name,
-  picture
-  // positions: [fullback, center]
-}) {
+const Player = props => {
+  const player = api.get(parseInt(props.match.params.number, 10));
+  if (!player) {
+    return <div>Sorry, but the player was not found</div>;
+  }
+
   return (
     <Fragment>
       <div className="player-container">
         <div className="player-picture-item">
-          <img src={picture} alt="dai" />
+          <img src={require("../ieuan.jpg")} alt="player" />
         </div>
         <ul className="player-stats-item">
-          <li>{name}</li>
-          {/* <li>
-            {positions.map(position => {
-              return <li>{position}</li>;
+          <li>{player.name}</li>
+          <li>{player.age}</li>
+          <li>
+            {player.positions.map((position, index) => {
+              return <div key={index}>{position}</div>;
             })}
-          </li> */}
+          </li>
         </ul>
       </div>
       <form className="form-container">
@@ -34,11 +36,6 @@ export default function Player({
       </form>
     </Fragment>
   );
-}
+};
 
-// <Player
-//   picture={picture}
-//   name="Dai Morris"
-//   age="34"
-//   positions={["fullback", "center"]}
-// />;
+export default Player;
