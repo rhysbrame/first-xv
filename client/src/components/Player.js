@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-import api from "../PlayerAPI";
 
 const Player = props => {
-  const player = api.get(parseInt(props.match.params.number, 10));
+  const player = undefined;
   if (!player) {
     return <div>Sorry, but the player was not found</div>;
   }
@@ -10,9 +9,7 @@ const Player = props => {
   return (
     <Fragment>
       <div className="player-container">
-        <div className="player-picture-item">
-          <img src={require("../ieuan.jpg")} alt="player" />
-        </div>
+        <div className="player-picture-item" />
         <ul className="player-stats-item">
           <li>{player.name}</li>
           <li>{player.age}</li>
