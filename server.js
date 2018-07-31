@@ -3,12 +3,10 @@ const fetch = require("node-fetch");
 const app = express();
 const port = process.env.PORT || 5000;
 
-// require("./routes")(app);
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/team", (req, res) => {
   const baseUrl =
     "https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4205/profile.json?api_key=czvunrws6gmkaa5veyk4qchk";
 

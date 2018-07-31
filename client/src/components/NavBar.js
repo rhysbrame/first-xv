@@ -7,6 +7,9 @@ export default function NavBar() {
       <NavLink className="nav-link" to="/">
         Home-----
       </NavLink>
+      <NavLink className="nav-link" to="/team">
+        Team-----
+      </NavLink>
       <NavLink className="nav-link" to="/player">
         Player-----
       </NavLink>

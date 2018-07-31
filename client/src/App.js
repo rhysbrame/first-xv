@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Player from "./components/Player";
+import Team from "./components/Team";
 import "./App.css";
 import logo from "./logo.svg";
 
@@ -22,6 +23,7 @@ class App extends Component {
           </h2>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/team" component={Team} />
             <Route path="/player/:number" component={Player} />
           </Switch>
         </main>
