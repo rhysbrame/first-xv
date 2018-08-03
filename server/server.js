@@ -1,36 +1,19 @@
 const express = require("express");
-const fetch = require("node-fetch");
 const app = express();
 const port = process.env.PORT || 5000;
-const config = require("./config");
+
+require("./routes")(app);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use("/team", require("./routes/team"));
 
-app.get("/team", (req, res) => {
-  const protocol = config.baseUrl.protocol;
-  const hostname = config.baseUrl.hostname;
-  const path = config.baseUrl.path;
-  const query = config.query.seasonQuery;
-  const apiKey = config.API.builder + config.API.key;
+app.get("/", (req, res) => {
+  res.send("Express server Home page");
+});
 
-  const urlBuilder = (url1, url2, url3, url4, url5) => {
-    let newUrl = url1 + url2 + url3 + url4 + url5;
-    return newUrl;
-  };
-
-  const apiUrl = urlBuilder(protocol, hostname, path, query, apiKey);
-  console.log("url****", apiUrl);
-  
-  fetch(apiUrl)
-  .then(res => res.json())
-  .then(data => {
-    console.log("data****", data);
-      res.send({ data });
-    })
-    .catch(err => {
-      res.redirect("/error");
-    });
+app.get("/about", (req, res) => {
+  res.send("about page for the Express server");
 });
 
 app.listen(port, err => {
