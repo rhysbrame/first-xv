@@ -4,14 +4,14 @@ const port = process.env.PORT || 5000;
 
 const season = require("./routes/season");
 const teamProfile = require("./routes/teamProfile");
-const player = require("./routes/player");
+const playerProfile = require("./routes/playerProfile");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(season);
 app.use(teamProfile);
-app.use(player);
+app.use(playerProfile);
 
 app.get("/", (req, res) => {
   res.send("Express server Home page");

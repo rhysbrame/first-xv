@@ -1,21 +1,25 @@
 import React, { Fragment } from "react";
 
 const Player = props => {
-  const player = undefined;
-  if (!player) {
-    return <div>Sorry, but the player was not found</div>;
-  }
-
+  const playerData = props.player;
   return (
     <Fragment>
+      <h1>Player</h1>
       <div className="player-container">
         <div className="player-picture-item" />
         <ul className="player-stats-item">
-          <li>{player.name}</li>
-          <li>{player.age}</li>
+          <li>{playerData.player.first_name}</li>
+          <li>{playerData.player.last_name}</li>
+          <li>{playerData.player.type}</li>
+          <li>{playerData.player.date_of_birth}</li>
+          <li>{playerData.player.nationality}</li>
           <li>
-            {player.positions.map((position, index) => {
-              return <div key={index}>{position}</div>;
+            {playerData.roles.map(role => {
+              return (
+                <div key={role.competitor.id}>
+                  <ul>{role.competitor.name}</ul>
+                </div>
+              );
             })}
           </li>
         </ul>

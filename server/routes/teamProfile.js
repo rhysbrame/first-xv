@@ -4,11 +4,10 @@ const config = require("./config");
 const fetch = require("node-fetch");
 
 router.get("/team_profile", (req, res) => {
-  const query = config.query.teamProfileQuery;
+  const query = config.team_id;
   const apiKey = config.API.key;
-
-  const url = `https://api.sportradar.us/rugby/trial/v2/union/en${query}api_key=${apiKey}`
-  
+  const url = `https://api.sportradar.us/rugby/trial/v2/union/en/teams/${query}/profile.json?api_key=${apiKey}`;
+  console.log(url)
   fetch(url)
     .then(res => res.json())
     .then(data => {

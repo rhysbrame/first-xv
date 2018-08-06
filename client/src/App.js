@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+
 import NavBar from "./Components/NavBar";
-import Player from "./Components/Player";
+
 import Home from "./Containers/Home";
-import Team from "./Containers/Team";
-import CompetitionContainer from "./Containers/CompetitionContainer"
+import PlayerContainer from "./Containers/PlayerContainer";
+import TeamContainer from "./Containers/TeamContainer";
+import CompetitionContainer from "./Containers/CompetitionContainer";
+
 import "./App.css";
 import logo from "./logo.svg";
 
@@ -18,16 +21,16 @@ class App extends Component {
           <NavBar className="nav-bar" />
         </header>
         <main>
-          <h2>
-            To get started, select the form of the players and let us show you
-            your first XV.
-          </h2>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/team" component={Team} />
-            <Route exact path="/player" component={Player} />
-            <Route path="/player/:number" component={Player} />
-            <Route exact path="/competitions" component={CompetitionContainer} />
+            <Route exact path="/team" component={TeamContainer} />
+            <Route exact path="/player" component={PlayerContainer} />
+            {/* <Route path="/player/:number" component={PlayerContainer} /> */}
+            <Route
+              exact
+              path="/competitions"
+              component={CompetitionContainer}
+            />
           </Switch>
         </main>
       </div>
