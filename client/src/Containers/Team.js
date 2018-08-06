@@ -11,9 +11,8 @@ class Team extends Component {
   }
 
   componentDidMount() {
-    fetch("/team")
+    fetch("/team_profile")
       .then(res => res.json())
-
       .then(data => {
         console.log("***********", data.data.competitor.name);
         this.setState({ teamName: data.data.competitor.name });

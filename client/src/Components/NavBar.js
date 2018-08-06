@@ -13,6 +13,9 @@ export default function NavBar() {
       <NavLink className="nav-link" to="/player">
         Player-----
       </NavLink>
+      <NavLink className="nav-link" to="/competitions">
+        Competitions-----
+      </NavLink>
     </div>
   );
 }

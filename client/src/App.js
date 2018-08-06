@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import NavBar from "./components/NavBar";
-import Player from "./components/Player";
-import Team from "./components/Team";
+import NavBar from "./Components/NavBar";
+import Player from "./Components/Player";
+import Home from "./Containers/Home";
+import Team from "./Containers/Team";
+import CompetitionContainer from "./Containers/CompetitionContainer"
 import "./App.css";
 import logo from "./logo.svg";
 
@@ -24,7 +25,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/team" component={Team} />
+            <Route exact path="/player" component={Player} />
             <Route path="/player/:number" component={Player} />
+            <Route exact path="/competitions" component={CompetitionContainer} />
           </Switch>
         </main>
       </div>
