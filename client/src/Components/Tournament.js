@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 
 const Tournament = props => {
+  if (!props.tournament.standings) {
+    return <div>Sorry, but the tournament was not found</div>;
+  }
   const tournament = props.tournament;
   return (
     <Fragment>

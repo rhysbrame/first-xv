@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Tournament from "../Components/Tournament";
 
 class TournamentContainer extends Component {
+  debugger;
   constructor(props) {
     super(props);
 
@@ -12,8 +13,10 @@ class TournamentContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("/tournament")
-      .then(res => res.json())
+    fetch("/tournament/:id")
+      .then(res => {
+        res.json();
+      })
       .then(data => {
         this.setState({ tournament: data.data, loading: false });
       })
