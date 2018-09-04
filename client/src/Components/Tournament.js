@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const Tounament = props => {
+const Tournament = props => {
   const tournament = props.tournament;
   return (
     <Fragment>
@@ -18,4 +18,4 @@ const Tounament = props => {
     </Fragment>
   );
 };
-export default Tounament;
+export default Tournament;
