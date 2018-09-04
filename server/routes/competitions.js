@@ -3,7 +3,7 @@ const router = express.Router();
 const config = require("./config");
 const fetch = require("node-fetch");
 
-router.get("/season", (req, res) => {
+router.get("/competitions", (req, res) => {
   const apiKey = config.apiKey;
   const url = `https://api.sportradar.us/rugby/trial/v2/union/en/seasons.json?api_key=${apiKey}`;
 

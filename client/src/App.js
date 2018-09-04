@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import NavBar from "./Components/NavBar";
-
 import Home from "./Containers/Home";
 import PlayerContainer from "./Containers/PlayerContainer";
 import TeamContainer from "./Containers/TeamContainer";
-import CompetitionContainer from "./Containers/CompetitionContainer";
+import CompetitionsContainer from "./Containers/CompetitionsContainer";
 
 import "./App.css";
 import logo from "./logo.svg";
@@ -28,7 +27,7 @@ class App extends Component {
             <Route
               exact
               path="/competitions"
-              component={CompetitionContainer}
+              component={CompetitionsContainer}
             />
           </Switch>
         </main>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Competition from "../Components/Competition";
+import Competitions from "../Components/Competitions";
 
-class CompetitionContainer extends Component {
+class CompetitionsContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -11,7 +11,7 @@ class CompetitionContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("/season")
+    fetch("/competitions")
       .then(res => res.json())
       .then(data => {
         this.setState({ competitions: data.data.seasons });
@@ -22,7 +22,7 @@ class CompetitionContainer extends Component {
   }
 
   render() {
-    return <Competition competitions={this.state.competitions} />;
+    return <Competitions competitions={this.state.competitions} />;
   }
 }
-export default CompetitionContainer;
+export default CompetitionsContainer;
