@@ -5,11 +5,14 @@ const Competition = props => {
   return (
     <ul>
       {competition.map(comp => (
-        <li key={comp.id}>
-          <h3>{comp.name}</h3>
-          <div>{comp.tournament_id}</div>
-          <div>{comp.start_date}</div>
-        </li>
+        <form action="/competitions" method="get">
+          <li key={comp.id}>
+            <h3>{comp.name}</h3>
+            <div>{comp.tournament_id}</div>
+            <div>{comp.start_date}</div>
+          </li>
+          <input type="submit" name="tournament_id" value={comp.tournament_id}/>
+        </form>
       ))}
     </ul>
   );
