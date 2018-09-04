@@ -15,7 +15,6 @@ class TeamContainer extends Component {
     fetch("/team_profile")
       .then(res => res.json())
       .then(data => {
-        console.log('**************',data)
         this.setState({ team: data.data, loading: false });
       })
       .catch(err => {

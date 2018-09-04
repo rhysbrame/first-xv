@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 
 const Team = props => {
   const team = props.team;
-  console.log('***', team)
 
   return (
     <Fragment>
