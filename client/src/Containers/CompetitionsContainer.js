@@ -11,6 +11,7 @@ class CompetitionsContainer extends Component {
   }
 
   componentDidMount() {
+    //this fetch here refers to the backend endpoint ie the link between the back and front
     fetch("/competitions")
       .then(res => res.json())
       .then(data => {

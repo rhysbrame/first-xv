@@ -7,14 +7,17 @@ export default function NavBar() {
       <NavLink className="nav-link" to="/">
         Home-----
       </NavLink>
+      <NavLink className="nav-link" to="/competitions">
+        Competitions-----
+      </NavLink>
+      <NavLink className="nav-link" to="/tournament">
+        Tournament-----
+      </NavLink>
       <NavLink className="nav-link" to="/team">
         Team-----
       </NavLink>
       <NavLink className="nav-link" to="/player">
         Player-----
-      </NavLink>
-      <NavLink className="nav-link" to="/competitions">
-        Competitions-----
       </NavLink>
     </div>
   );

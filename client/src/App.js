@@ -6,6 +6,7 @@ import Home from "./Containers/Home";
 import PlayerContainer from "./Containers/PlayerContainer";
 import TeamContainer from "./Containers/TeamContainer";
 import CompetitionsContainer from "./Containers/CompetitionsContainer";
+import TournamentContainer from "./Containers/TournamentContainer";
 
 import "./App.css";
 import logo from "./logo.svg";
@@ -22,13 +23,10 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/competitions" component={CompetitionsContainer} />
+            <Route exact path="/tournament" component={TournamentContainer} />
             <Route exact path="/team" component={TeamContainer} />
             <Route exact path="/player" component={PlayerContainer} />
-            <Route
-              exact
-              path="/competitions"
-              component={CompetitionsContainer}
-            />
           </Switch>
         </main>
       </div>
