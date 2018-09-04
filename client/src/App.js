@@ -25,7 +25,6 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/team" component={TeamContainer} />
             <Route exact path="/player" component={PlayerContainer} />
-            {/* <Route path="/player/:number" component={PlayerContainer} /> */}
             <Route
               exact
               path="/competitions"
