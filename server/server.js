@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const competitions = require("./routes/competitions");
+const tournament = require("./routes/tournament")
 const teamProfile = require("./routes/teamProfile");
 const playerProfile = require("./routes/playerProfile");
 
@@ -10,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(competitions);
+app.use(tournament);
 app.use(teamProfile);
 app.use(playerProfile);
 
