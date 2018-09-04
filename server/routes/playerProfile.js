@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 
 router.get("/player_profile", (req, res) => {
   const player_id = config.player_id;
-  const apiKey = config.API.key;
+  const apiKey = config.apiKey;
   const url = `https://api.sportradar.us/rugby/trial/v2/union/en/players/${player_id}/profile.json?api_key=${apiKey}`;
 
   fetch(url)

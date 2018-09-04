@@ -1,0 +1,15 @@
+
+
+
+API address for getting season:
+
+https://api.sportradar.us/rugby/trial/v2/union/en/seasons.xml?api_key=czvunrws6gmkaa5veyk4qchk
+
+Getting season stats:
+
+https://api.sportradar.us/rugby/trial/v2/union/en/seasons/sr:season:44378/live_standings.json?api_key=czvunrws6gmkaa5veyk4qchk
+
+Getting team stats:
+
+https://api.sportradar.us/rugby/trial/v2/union/en/teams/sr:competitor:4205/profile.json?api_key=czvunrws6gmkaa5veyk4qchk
+

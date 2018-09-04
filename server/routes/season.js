@@ -4,8 +4,7 @@ const config = require("./config");
 const fetch = require("node-fetch");
 
 router.get("/season", (req, res) => {
-  const query = config.query.seasonQuery;
-  const apiKey = config.API.key;
+  const apiKey = config.apiKey;
   const url = `https://api.sportradar.us/rugby/trial/v2/union/en/seasons.json?api_key=${apiKey}`;
 
   fetch(url)
