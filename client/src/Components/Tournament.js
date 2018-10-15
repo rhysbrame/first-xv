@@ -20,16 +20,18 @@ const Tournament = props => {
                 {group.team_standings.map(team => {
                   return (
                     <form action="/team" method="get" key={team.team.id}>
-                      <li>{team.team.name}</li>
-                      <div>
-                        <label htmlFor="id">{team.team.id}</label>
-                        <input
-                          type="submit"
-                          name="id"
-                          id="teamId"
-                          value={team.team.id.match(/\d+/g)}
-                        />
-                      </div>
+                      <li>
+                        <div>
+                          <label htmlFor="id">{team.team.name}</label>
+                          ------
+                          <input
+                            type="submit"
+                            name="id"
+                            id="teamId"
+                            value={team.team.id.match(/\d+/g)}
+                          />
+                        </div>
+                      </li>
                     </form>
                   );
                 })}

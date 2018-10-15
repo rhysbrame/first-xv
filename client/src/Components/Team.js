@@ -10,9 +10,9 @@ const Team = props => {
       {team.players.map(player => {
         return (
           <form action="/player" method="get" key={player.id}>
-            <li>{player.name}</li>
             <div>
-              <label htmlFor="id">{player.id}</label>
+              <label htmlFor="id">{player.name}</label>
+              ---------
               <input
                 type="submit"
                 name="id"
