@@ -12,7 +12,12 @@ class PlayerContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("/player_profile")
+    const API = "/player_profile/";
+    const query = this.props.location.search.match(/\d+/g);
+    const q = query[0];
+    const call = API + q;
+
+    fetch(call)
       .then(res => res.json())
       .then(data => {
         this.setState({ player: data.data, loading: false });

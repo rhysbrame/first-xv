@@ -9,6 +9,7 @@ const Competitions = props => {
           <li>
             <h3>{competition.name}</h3>
             <h5>{competition.start_date}</h5>
+            <h5>{competition.name}</h5>
             <div>
               <label htmlFor="id">{competition.id}</label>
               <input

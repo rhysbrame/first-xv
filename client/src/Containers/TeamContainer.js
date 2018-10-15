@@ -12,7 +12,12 @@ class TeamContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("/team_profile")
+    const API = "/team_profile/";
+    const query = this.props.location.search.match(/\d+/g);
+    const q = query[0];
+    const call = API + q;
+
+    fetch(call)
       .then(res => res.json())
       .then(data => {
         this.setState({ team: data.data, loading: false });

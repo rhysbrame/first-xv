@@ -1,23 +1,43 @@
 import React, { Fragment } from "react";
 
 const Tournament = props => {
-  if (!props.tournament.standings) {
-    return <div>Sorry, but the tournament was not found</div>;
+  if (props.tournament.standings.length === 0) {
+    return <h3>Sorry, but the tournament was not found</h3>;
   }
   const tournament = props.tournament;
+  console.log("****t***", tournament);
+
   return (
     <Fragment>
-      <h1>Tournament</h1>
-      <h3>{tournament.standings[0].groups[0].name}</h3>
-      <ul>
-        {tournament.standings[0].groups[0].team_standings.map(team => {
+      <h2>Tournament</h2>
+      <h3>
+        {tournament.standings[0].groups.map(group => {
+          console.log("****group***", group);
           return (
-            <div key={team.team.id}>
-              <li>{team.team.name}</li>
+            <div key={group.id}>
+              <h1>{group.name}</h1>
+              <ul>
+                {group.team_standings.map(team => {
+                  return (
+                    <form action="/team" method="get" key={team.team.id}>
+                      <li>{team.team.name}</li>
+                      <div>
+                        <label htmlFor="id">{team.team.id}</label>
+                        <input
+                          type="submit"
+                          name="id"
+                          id="teamId"
+                          value={team.team.id.match(/\d+/g)}
+                        />
+                      </div>
+                    </form>
+                  );
+                })}
+              </ul>
             </div>
           );
         })}
-      </ul>
+      </h3>
     </Fragment>
   );
 };

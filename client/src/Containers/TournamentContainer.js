@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Tournament from "../Components/Tournament";
 
 class TournamentContainer extends Component {
-  debugger;
   constructor(props) {
     super(props);
 
@@ -13,13 +12,17 @@ class TournamentContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("/tournament/:id")
-      .then(res => {
-        res.json();
-      })
+    const API = "/tournament/";
+    const query = this.props.location.search.match(/\d+/g);
+    const q = query[0];
+    const call = API + q;
+
+    fetch(call)
+      .then(res => res.json())
       .then(data => {
         this.setState({ tournament: data.data, loading: false });
       })
+
       .catch(err => {
         console.log(err);
       });
