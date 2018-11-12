@@ -1,4 +1,5 @@
 import React from "react";
+import "./Competition.css";
 
 var today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -8,32 +9,31 @@ const Competitions = props => {
 
   const competitions = props.competitions;
   competitions.forEach(function(comp) {
-    // console.log("comp", comp.end_date);
-    // console.log("compNew", new Date(comp.end_date));
-    // console.log("today", today);
     if (new Date(comp.end_date) > today) activeCompetitions.push(comp);
   });
 
   return (
-    <ul>
+    <ul className="competition-container">
       {activeCompetitions.map(competition => (
-        <form action="/tournament" method="get" key={competition.tournament_id}>
-          <li>
+        <li className="competition-item">
+          <form
+            className="competition-content"
+            action="/tournament"
+            method="get"
+            key={competition.tournament_id}
+          >
             <div>
-              <label htmlFor="id">
-                {competition.end_date}
-                -------
-                {competition.name}
-              </label>
+              <h3 htmlFor="id">{competition.competition.name}</h3>
               <input
                 type="submit"
                 name="id"
                 id="tournamentId"
                 value={competition.id.match(/\d+/g)}
               />
+              <p>{competition.year}</p>
             </div>
-          </li>
-        </form>
+          </form>
+        </li>
       ))}
     </ul>
   );
