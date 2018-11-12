@@ -1,5 +1,7 @@
+
 .App {
   text-align: center;
+  background-color: var(--team-second-color, white) ; 
 }
 
 .App--nav-bar {
@@ -12,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: var(--team-color, black) ;
   height: 150px;
   padding: 20px;
   color: white;
@@ -89,4 +91,8 @@
 
 .nav-link {
   color: rgb(221, 255, 0);
+}
+
+.team-container body {
+  background-color: crimson
 }

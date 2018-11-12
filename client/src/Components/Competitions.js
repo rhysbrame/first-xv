@@ -1,15 +1,27 @@
 import React from "react";
 
+var today = new Date();
+today.setHours(0, 0, 0, 0);
+
 const Competitions = props => {
+  const activeCompetitions = [];
+
   const competitions = props.competitions;
+  competitions.forEach(function(comp) {
+    // console.log("comp", comp.end_date);
+    // console.log("compNew", new Date(comp.end_date));
+    // console.log("today", today);
+    if (new Date(comp.end_date) > today) activeCompetitions.push(comp);
+  });
+
   return (
     <ul>
-      {competitions.map(competition => (
+      {activeCompetitions.map(competition => (
         <form action="/tournament" method="get" key={competition.tournament_id}>
           <li>
             <div>
               <label htmlFor="id">
-                {competition.start_date}
+                {competition.end_date}
                 -------
                 {competition.name}
               </label>
